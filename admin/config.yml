@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main # o 'master', según cómo crees la rama en GitHub
+
+# Dónde se guardan las fotos que subas desde el panel
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Idioma y configuración regional
+locale: "es"
+
+collections:
+  # --------------------------------------------------------------------------
+  # 1. COLECCIÓN DE ARTÍCULOS DE FONDO
+  # --------------------------------------------------------------------------
+  - name: "articulos"
+    label: "Artículos y Ensayos"
+    label_singular: "Artículo"
+    folder: "contenido/articulos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título de la Nota", name: "title", widget: "string" }
+      - { label: "Volanta / Sección", name: "seccion", widget: "select", options: ["Arquitectura", "Literatura", "Pintura", "Arte", "Turismo", "Música", "Filosofía", "Patrimonio", "Crónica"] }
+      - { label: "Bajada / Copete", name: "bajada", widget: "text" }
+      - { label: "Autor / Firma", name: "autor", widget: "string", default: "José Carmuega" }
+      - { label: "Fecha de Publicación", name: "fecha", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      
+      # Jerarquía editorial para armar la portada
+      - label: "Jerarquía en Portada"
+        name: "jerarquia"
+        widget: "select"
+        options:
+          - { label: "Apertura Mayor (Tipo A - Principal con foto grande)", value: "apertura" }
+          - { label: "Secundaria Lateral (Tipo B - Columna derecha con ilustración)", value: "lateral" }
+          - { label: "Crónica Media (Tipo C - Bloque medio a la izquierda)", value: "medio" }
+          - { label: "Cuaderno Visual (Tira inferior de 5 fotos)", value: "visual" }
+          - { label: "Solo Archivo / Sin destacar en Home", value: "archivo" }
+        default: "medio"
+
+      - { label: "Foto Destacada", name: "imagen", widget: "image", required: false }
+      - { label: "Epígrafe de la Foto", name: "epigrafe", widget: "string", required: false }
+      - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
+      - { label: "Etiquetas / Tags (separadas por coma)", name: "tags", widget: "list", required: false }
+
+  # --------------------------------------------------------------------------
+  # 2. LAS 10 PARROQUIALES (Gacetilla semanal)
+  # --------------------------------------------------------------------------
+  - name: "parroquiales"
+    label: "Gacetilla de Parroquiales"
+    files:
+      - file: "contenido/parroquiales.json"
+        label: "Las 10 Parroquiales de la Edición"
+        name: "lista_parroquiales"
+        fields:
+          - label: "Items (Hasta 10 notas breves)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Número (Ej: 01)", name: "numero", widget: "string" }
+              - { label: "Entidad / Hito (Ej: Bellas Artes)", name: "entidad", widget: "string" }
+              - { label: "Texto breve", name: "texto", widget: "string" }
+
+  # --------------------------------------------------------------------------
+  # 3. DATOS DE LA EDICIÓN VIGENTE
+  # --------------------------------------------------------------------------
+  - name: "edicion"
+    label: "Edición Vigente"
+    files:
+      - file: "contenido/edicion.json"
+        label: "Datos de Tapa"
+        name: "datos_tapa"
+        fields:
+          - { label: "Número de Edición (Ej: Edición N° 1)", name: "numero_edicion", widget: "string", default: "Edición N° 1" }
+          - { label: "Fecha de Tapa (Ej: Noviembre 2026)", name: "fecha_tapa", widget: "string", default: "Noviembre 2026" }
+          - { label: "Lema Institucional", name: "lema", widget: "string", default: "Revista Mensual de cultura. Recoleta, Buenos Aires." }
