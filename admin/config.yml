@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main # o 'master', según cómo crees la rama en GitHub
+  name: github
+  repo: macedoniaderecoleta-boop/macedoniaderecoleta
+  branch: main
 
 # Dónde se guardan las fotos que subas desde el panel
 media_folder: "assets/uploads"
@@ -25,8 +26,6 @@ collections:
       - { label: "Bajada / Copete", name: "bajada", widget: "text" }
       - { label: "Autor / Firma", name: "autor", widget: "string", default: "José Carmuega" }
       - { label: "Fecha de Publicación", name: "fecha", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-      
-      # Jerarquía editorial para armar la portada
       - label: "Jerarquía en Portada"
         name: "jerarquia"
         widget: "select"
@@ -37,11 +36,10 @@ collections:
           - { label: "Cuaderno Visual (Tira inferior de 5 fotos)", value: "visual" }
           - { label: "Solo Archivo / Sin destacar en Home", value: "archivo" }
         default: "medio"
-
       - { label: "Foto Destacada", name: "imagen", widget: "image", required: false }
       - { label: "Epígrafe de la Foto", name: "epigrafe", widget: "string", required: false }
       - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
-      - { label: "Etiquetas / Tags (separadas por coma)", name: "tags", widget: "list", required: false }
+      - { label: "Etiquetas / Tags", name: "tags", widget: "list", required: false }
 
   # --------------------------------------------------------------------------
   # 2. LAS 10 PARROQUIALES (Gacetilla semanal)
