@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macedonia — Revista Cultural</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@600;700&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Script de autenticación para Netlify Identity -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- ENCABEZADO COMPLETO FIJO (STICKY HEADER) -->
+  <div class="header-sticky-wrapper">
+    
+    <!-- Barra superior de servicios culturales -->
+    <div class="sub-nav-bar">
+      <div class="container sub-nav-inner">
+        <a href="#">Museos</a>
+        <a href="#">Agenda</a>
+        <a href="#">Galerías</a>
+        <a href="#">Bibliotecas</a>
+        <a href="#">Cafés &amp; Tertulias</a>
+        <a href="#">Teatro</a>
+        <a href="#">Conciertos</a>
+        <a href="#">Archivos</a>
+      </div>
+    </div>
+
+    <!-- Cintillo formal de edición -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>Buenos Aires &bull; Edición N° 1</span>
+        <span>Sábado 7 de Noviembre de 2026</span>
+      </div>
+    </div>
+
+    <!-- Cabezal con logotipo y lema -->
+    <header class="header">
+      <div class="container header-inner">
+        <h1 class="brand-logo">MACEDONIA</h1>
+        <p class="brand-claim">Revista Mensual de cultura. Recoleta, Buenos Aires.</p>
+      </div>
+    </header>
+
+    <!-- Barra de navegación negra editorial -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#">Arte</a>
+        <a href="#">Literatura</a>
+        <a href="#">Pintura</a>
+        <a href="#">Arquitectura</a>
+        <a href="#">Turismo</a>
+        <a href="#">Parroquiales</a>
+      </div>
+    </nav>
+
+  </div>
+  <!-- FIN ENCABEZADO FIJO -->
+
+  <!-- Espacio para Banner de patrocinio cultural -->
+  <div class="container banner-container">
+    <div class="ad-banner">
+      <span class="ad-label">Patrocinio Cultural</span>
+      <div class="ad-content">
+        <h4 class="ad-title">Temporada Lírica &amp; Sinfónica en el Teatro Colón</h4>
+        <p class="ad-text">Abonos extraordinarios 2027 &bull; Ciclo de Grandes Intérpretes y Ópera de Cámara</p>
+      </div>
+      <a href="#" class="ad-btn">Conocer Programa</a>
+    </div>
+  </div>
+
+  <main class="container main-content">
+    
+    <!-- 1. BLOQUE SUPERIOR: Nota Principal + Lateral con Ilustración -->
+    <section class="grid-top">
+      
+      <!-- NOTICIA A (Apertura mayor) -->
+      <article class="story story-lead">
+        <span class="story-category">Arquitectura</span>
+        <h2 class="story-title"><a href="articulo.html">El esplendor de la fachada: proporción, mármol y la arquitectura que desafía al tiempo</a></h2>
+        
+        <div class="story-media">
+          <img src="hotel.jpg" alt="Fachada histórica del hotel" class="story-img">
+          <figcaption class="story-caption">Perspectiva exterior. Las galerías señoriales conservan el lenguaje fundacional del siglo pasado.</figcaption>
+        </div>
+
+        <p class="story-lead-text">Una lectura profunda sobre los edificios emblemáticos que sobreviven intactos en el norte de la ciudad. Lejos de la ornamentación accesoria, es la exactitud del cálculo y la nobleza de los materiales lo que sostiene su gravedad espacial.</p>
+        
+        <div class="story-byline">
+          Por <strong>José Carmuega</strong>
+        </div>
+      </article>
+
+      <!-- NOTICIAS LATERALES B -->
+      <aside class="sidebar-top">
+        
+        <article class="story story-side">
+          <span class="story-category">Literatura</span>
+          <div class="story-media-side">
+            <img src="caperucita.jpg" alt="Ilustración literaria" class="story-img-side">
+          </div>
+          <h3 class="story-title-small"><a href="#">La fábula despojada: sombras, infancia y la relectura del mito</a></h3>
+          <p class="story-excerpt">Nuevas aproximaciones al relato tradicional revelan los matices morales y el trazo sombrío que la mirada contemporánea intentó suavizar.</p>
+          <div class="story-byline">
+            Por <strong>Ignacio Del Valle</strong>
+          </div>
+        </article>
+
+        <div class="divider"></div>
+
+        <article class="story story-side">
+          <span class="story-category">Pintura</span>
+          <h3 class="story-title-small"><a href="#">Medio siglo de tinta china y claroscuro rioplatense</a></h3>
+          <p class="story-excerpt">La retrospectiva de la temporada examina el trazo denso, la mancha y la construcción del silencio en el papel de arroz.</p>
+          <div class="story-byline">
+            Por <strong>Clara M. Ramos</strong>
+          </div>
+        </article>
+
+      </aside>
+
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 2. BLOQUE MEDIO COMPENSADO: 4 Notas a la izquierda + 10 Parroquiales a la derecha -->
+    <section class="grid-middle-balanced">
+      
+      <!-- Columna 1 -->
+      <div class="col-stories">
+        <article class="story story-card-block">
+          <span class="story-category">Arte</span>
+          <h4 class="story-title-medium"><a href="#">El coleccionismo invisible: libros raros y primeras ediciones</a></h4>
+          <p class="story-excerpt">En departamentos de techos altos descansan volúmenes que nunca entraron en los catálogos públicos. Conversación con tres bibliófilos discretos sobre el destino del papel impreso.</p>
+          <div class="story-byline">
+            Por <strong>Marcelo Quintana</strong>
+          </div>
+        </article>
+
+        <div class="inner-divider"></div>
+
+        <article class="story story-card-block">
+          <span class="story-category">Música</span>
+          <h4 class="story-title-medium"><a href="#">Las grabaciones recuperadas del Salón Dorado</a></h4>
+          <p class="story-excerpt">Cintas magnéticas de 1958 rescatan ejecuciones de cámara que se creían perdidas para siempre en los archivos del subsuelo.</p>
+          <div class="story-byline">
+            Por <strong>Clara M. Ramos</strong>
+          </div>
+        </article>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-stories">
+        <article class="story story-card-block">
+          <span class="story-category">Turismo</span>
+          <h4 class="story-title-medium"><a href="#">Cuaderno de costa: el rumor del mar fuera de temporada</a></h4>
+          <p class="story-excerpt">El viento atlántico, las ramblas vacías y los muelles de madera cuando la multitud de verano finalmente ha desalojado el horizonte y regresa el ritmo contemplativo.</p>
+          <div class="story-byline">
+            Por <strong>Elena Bence</strong>
+          </div>
+        </article>
+
+        <div class="inner-divider"></div>
+
+        <article class="story story-card-block">
+          <span class="story-category">Filosofía</span>
+          <h4 class="story-title-medium"><a href="#">El paseo solitario como método crítico</a></h4>
+          <p class="story-excerpt">De Rousseau a los paseantes porteños: por qué la observación pausada de las esquinas sigue siendo la forma más pura de pensamiento.</p>
+          <div class="story-byline">
+            Por <strong>Tomás Aguirre</strong>
+          </div>
+        </article>
+      </div>
+
+      <!-- Columna 3: Las 10 Parroquiales -->
+      <article class="story-parroquiales-card">
+        <div class="parroquiales-header">
+          <span class="story-category">Parroquiales</span>
+          <h4 class="story-title-parroquiales">Gacetilla Semanal (10 Notas Breves)</h4>
+        </div>
+        
+        <div class="parroquiales-dual-grid">
+          <ul class="parroquiales-col">
+            <li><span>01.</span> Bellas Artes: Coloquio de restauración de yeserías del siglo XIX.</li>
+            <li><span>02.</span> Hemeroteca: Digitalizan revistas literarias de 1920 a 1940.</li>
+            <li><span>03.</span> Concurso de Ensayo: Abre la recepción de originales inéditos.</li>
+            <li><span>04.</span> Ciclo de Cine: Retrospectiva en 35mm en el Palais de Glace.</li>
+            <li><span>05.</span> Galería Juncal: Inaugura muestra de aguafuertes porteños.</li>
+          </ul>
+          <ul class="parroquiales-col">
+            <li><span>06.</span> Tertulia: Encuentro sobre crónica urbana en el Café de los Incas.</li>
+            <li><span>07.</span> Tipografía: Taller de encuadernación artesanal y tipos móviles.</li>
+            <li><span>08.</span> Patrimonio: Visita guiada por palacetes protegidos de Alvear.</li>
+            <li><span>09.</span> Salón de Grabado: Distinguen a jóvenes ilustradores del interior.</li>
+            <li><span>10.</span> Archivo Histórico: Donan correspondencia inédita de 1910.</li>
+          </ul>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 3. TIRA DE 5 NOTICIAS CON FOTO -->
+    <section class="strip-section">
+      <div class="section-header-label">
+        <span>Cuaderno Visual &bull; Edición N° 1</span>
+      </div>
+
+      <div class="grid-five">
+        
+        <article class="story-five">
+          <div class="story-media-five">
+            <img src="hotel.jpg" alt="Nota gráfica 1" class="img-five">
+          </div>
+          <span class="story-category-mini">Patrimonio</span>
+          <h5 class="story-title-mini"><a href="#">El mármol travertino en los zaguanes señoriales</a></h5>
+          <div class="story-byline-mini">Por <strong>J. C.</strong></div>
+        </article>
+
+        <article class="story-five">
+          <div class="story-media-five">
+            <img src="caperucita.jpg" alt="Nota gráfica 2" class="img-five">
+          </div>
+          <span class="story-category-mini">Ilustración</span>
+          <h5 class="story-title-mini"><a href="#">El bosque oscuro y el dibujo en tinta lineal</a></h5>
+          <div class="story-byline-mini">Por <strong>I. D. V.</strong></div>
+        </article>
+
+        <article class="story-five">
+          <div class="story-media-five">
+            <img src="hotel.jpg" alt="Nota gráfica 3" class="img-five">
+          </div>
+          <span class="story-category-mini">Crónica</span>
+          <h5 class="story-title-mini"><a href="#">Noches de lobby: la tertulia después del concierto</a></h5>
+          <div class="story-byline-mini">Por <strong>M. Q.</strong></div>
+        </article>
+
+        <article class="story-five">
+          <div class="story-media-five">
+            <img src="caperucita.jpg" alt="Nota gráfica 4" class="img-five">
+          </div>
+          <span class="story-category-mini">Cultura</span>
+          <h5 class="story-title-mini"><a href="#">Grabadores clásicos y las ediciones de 1930</a></h5>
+          <div class="story-byline-mini">Por <strong>C. M. R.</strong></div>
+        </article>
+
+        <article class="story-five">
+          <div class="story-media-five">
+            <img src="hotel.jpg" alt="Nota gráfica 5" class="img-five">
+          </div>
+          <span class="story-category-mini">Ensayo</span>
+          <h5 class="story-title-mini"><a href="#">El orden de las cornisas y el horizonte urbano</a></h5>
+          <div class="story-byline-mini">Por <strong>E. B.</strong></div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA NEGRO -->
+  <footer class="footer-dark">
+    <div class="container">
+      
+      <div class="footer-row-top">
+        <div class="footer-brand-wrap">
+          <div class="footer-dark-logo">MACEDONIA</div>
+          <p class="footer-about">
+            Macedonia es una revista cultural editada semanalmente en el barrio de Recoleta, Ciudad Autónoma de Buenos Aires. Concebida bajo la tradición del periodismo de autor, la revista reúne crítica de arte, arquitectura, literatura de largo aliento, memorias urbanas y crónica territorial. Su nombre rinde homenaje a la goleta que condujo al Libertador a las aguas de Guayaquil, símbolo de rumbo, rigor y vocación americana.
+          </p>
+        </div>
+
+        <div class="footer-contact-wrap">
+          <h5 class="footer-dark-heading">Correspondencia &amp; Redes</h5>
+          
+          <a href="mailto:redaccion@revistamacedonia.com.ar" class="btn-dispatch">
+            <span class="dispatch-pulse"></span>
+            Escribir a la Redacción
+          </a>
+
+          <ul class="footer-contact-list">
+            <li><span>Redacción:</span> <a href="mailto:redaccion@revistamacedonia.com.ar">redaccion@revistamacedonia.com.ar</a></li>
+            <li><span>Director:</span> <a href="mailto:jose@revistamacedonia.com.ar">jose@revistamacedonia.com.ar</a></li>
+            <li><span>Instagram:</span> <a href="#">@revistamacedonia</a></li>
+            <li><span>LinkedIn:</span> <a href="#">Macedonia Revista Cultural</a></li>
+            <li><span>WhatsApp Redacción:</span> <a href="#">+54 9 11 4000-0000</a></li>
+            <li><span>Sede:</span> Av. Alvear y Juncal, Recoleta, CABA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-dark-divider"></div>
+
+      <div class="footer-grid-bottom">
+        
+        <div class="footer-block">
+          <h6 class="footer-subheading">Cuerpo de Dirección</h6>
+          <p class="footer-staff-line"><strong>Director General:</strong> José Carmuega</p>
+          <p class="footer-staff-line"><strong>Jefa de Redacción:</strong> Clara M. Ramos</p>
+          <p class="footer-staff-line"><strong>Dirección de Arte:</strong> Ignacio Del Valle</p>
+          <p class="footer-staff-line"><strong>Consejo Editorial:</strong> Marcelo Quintana, Elena Bence, Dr. Tomás Aguirre</p>
+        </div>
+
+        <div class="footer-block">
+          <h6 class="footer-subheading">Secciones Semanales</h6>
+          <ul class="footer-dark-links">
+            <li><a href="#">Arquitectura &amp; Ciudad</a></li>
+            <li><a href="#">Literatura &amp; Ensayos</a></li>
+            <li><a href="#">Pintura &amp; Artes Visuales</a></li>
+            <li><a href="#">Turismo de Autor</a></li>
+            <li><a href="#">Parroquiales y Agenda</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h6 class="footer-subheading">Institucional</h6>
+          <ul class="footer-dark-links">
+            <li><a href="pagina.html">Manifiesto de Edición</a></li>
+            <li><a href="pagina.html">Pautas de Colaboración</a></li>
+            <li><a href="pagina.html">Patrocinio y Mecenazgo</a></li>
+            <li><a href="pagina.html">Política de Transparencia</a></li>
+            <li><a href="archivo.html">Hemeroteca de Ediciones</a></li>
+            <li><a href="creditos.html">Staff &amp; Directorio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h6 class="footer-subheading">Edición Impresa &amp; Digital</h6>
+          <p class="footer-small-text">
+            Publicación inscripta en la Dirección Nacional del Derecho de Autor. Registro de la Propiedad Intelectual en trámite. ISSN en gestión. Todos los artículos firmados representan la voz de sus respectivos autores.
+          </p>
+          <p class="footer-copy">&copy; 2026 MACEDONIA &bull; Buenos Aires, República Argentina.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script de redirección al panel tras iniciar sesión -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
