@@ -4,7 +4,7 @@ activo: true
 ubicacion: lateral
 etiqueta: Patrocinio Cultural
 bajada: Cafe la vía
-imagen: /assets/uploads/Flyer Juntos a Ver al Papa.png
+imagen: /assets/uploads/ceci consul.jpg
 texto_boton: Conocer más
 enlace: www.josecarmuega.com
 vencimiento: 2026-11-26
