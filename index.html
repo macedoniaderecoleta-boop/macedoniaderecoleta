@@ -349,7 +349,7 @@
       const cacheBust = `?v=${Date.now()}`;
 
       function parseFrontmatter(md) {
-        const match = md.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)\$/);
+        const match = md.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
         if (!match) return { data: {}, body: md };
         const data = {};
         match[1].split(/\r?\n/).forEach(line => {
@@ -357,7 +357,7 @@
           if (idx > -1) {
             const key = line.slice(0, idx).trim();
             let val = line.slice(idx + 1).trim();
-            val = val.replace(/^['"]|['"]\$/g, '');
+            val = val.replace(/^['"]|['"]$/g, '');
             if (val === 'true') val = true;
             if (val === 'false') val = false;
             data[key] = val;
@@ -445,4 +445,100 @@
 
           const bannerMed = anuncios.find(a => a.ubicacion === 'medio');
           if (bannerMed) {
-            document.getElementBy
+            document.getElementById('cms-banner-medio').innerHTML = `
+              <div class="banner-container" style="margin-bottom: 24px;">${renderBannerHTML(bannerMed)}</div>
+            `;
+          }
+
+          anuncioLateral = anuncios.find(a => a.ubicacion === 'lateral') || null;
+        }
+
+        // Artículos
+        const resArtDir = await fetch(`${apiBase}/contenido/articulos${cacheBust}`);
+        if (resArtDir.ok) {
+          const files = await resArtDir.json();
+          const mdFiles = files.filter(f => f.name.endsWith('.md'));
+          const articulos = [];
+          for (const f of mdFiles) {
+            const raw = await fetch(`${f.download_url}${cacheBust}`).then(r => r.text());
+            const { data } = parseFrontmatter(raw);
+            data.slug = f.name;
+            articulos.push(data);
+          }
+          articulos.sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
+
+          const cleanImg = src => !src ? '' : (src.startsWith('/') ? src.slice(1) : src);
+          const linkArt = art => `articulo.html?nota=${encodeURIComponent(art.slug)}`;
+
+          const apertura = articulos.find(a => a.jerarquia === 'apertura');
+          if (apertura) {
+            const img = cleanImg(apertura.imagen);
+            document.getElementById('cms-apertura').innerHTML = `
+              <span class="story-category">${apertura.seccion || 'Cultura'}</span>
+              <h2 class="story-title"><a href="${linkArt(apertura)}">${apertura.title || ''}</a></h2>
+              ${img ? `<div class="story-media"><img src="${img}" alt="${apertura.title || ''}" class="story-img">${apertura.epigrafe ? `<figcaption class="story-caption">${apertura.epigrafe}</figcaption>` : ''}</div>` : ''}
+              <p class="story-lead-text">${apertura.bajada || ''}</p>
+              <div class="story-byline">Por <strong>${apertura.autor || 'Redacción'}</strong></div>
+            `;
+          }
+
+          const laterales = articulos.filter(a => a.jerarquia === 'lateral').slice(0, 2);
+          if (laterales.length > 0 || anuncioLateral) {
+            let htmlLateral = laterales.map((art, i) => {
+              const img = cleanImg(art.imagen);
+              return `
+                ${i > 0 ? '<div class="divider"></div>' : ''}
+                <article class="story story-side">
+                  <span class="story-category">${art.seccion || 'Cultura'}</span>
+                  ${img && i === 0 ? `<div class="story-media-side"><img src="${img}" alt="${art.title || ''}" class="story-img-side"></div>` : ''}
+                  <h3 class="story-title-small"><a href="${linkArt(art)}">${art.title || ''}</a></h3>
+                  <p class="story-excerpt">${art.bajada || ''}</p>
+                  <div class="story-byline">Por <strong>${art.autor || 'Redacción'}</strong></div>
+                </article>
+              `;
+            }).join('');
+
+            if (anuncioLateral) {
+              htmlLateral += `${htmlLateral ? '<div class="divider"></div>' : ''}${renderBannerHTML(anuncioLateral)}`;
+            }
+            if (htmlLateral) document.getElementById('cms-laterales').innerHTML = htmlLateral;
+          }
+
+          const medios = articulos.filter(a => a.jerarquia === 'medio').slice(0, 4);
+          if (medios.length > 0) {
+            const renderMedio = art => `
+              <article class="story story-card-block">
+                <span class="story-category">${art.seccion || 'Cultura'}</span>
+                <h4 class="story-title-medium"><a href="${linkArt(art)}">${art.title || ''}</a></h4>
+                <p class="story-excerpt">${art.bajada || ''}</p>
+                <div class="story-byline">Por <strong>${art.autor || 'Redacción'}</strong></div>
+              </article>
+            `;
+            const m1 = medios.slice(0, 2);
+            const m2 = medios.slice(2, 4);
+            if (m1.length) document.getElementById('cms-medio-col1').innerHTML = m1.map(renderMedio).join('<div class="inner-divider"></div>');
+            if (m2.length) document.getElementById('cms-medio-col2').innerHTML = m2.map(renderMedio).join('<div class="inner-divider"></div>');
+          }
+
+          const visuales = articulos.filter(a => a.jerarquia === 'visual').slice(0, 5);
+          if (visuales.length > 0) {
+            document.getElementById('cms-visual').innerHTML = visuales.map(art => {
+              const img = cleanImg(art.imagen) || 'hotel.jpg';
+              const iniciales = (art.autor || 'M').split(' ').map(p => p[0] + '.').join(' ');
+              return `
+                <article class="story-five">
+                  <div class="story-media-five"><img src="${img}" alt="${art.title || ''}" class="img-five"></div>
+                  <span class="story-category-mini">${art.seccion || 'Cultura'}</span>
+                  <h5 class="story-title-mini"><a href="${linkArt(art)}">${art.title || ''}</a></h5>
+                  <div class="story-byline-mini">Por <strong>${iniciales}</strong></div>
+                </article>
+              `;
+            }).join('');
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+</body>
+</html>
