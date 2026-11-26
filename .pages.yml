@@ -1,0 +1,184 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: articulos
+    label: Artículos y Ensayos
+    type: collection
+    path: contenido/articulos
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title, seccion, jerarquia, fecha, autor ]
+      primary: title
+      sort: [ fecha, title ]
+      default:
+        sort: fecha
+        order: desc
+    fields:
+      - name: title
+        label: Título de la Nota
+        type: string
+        required: true
+      - name: seccion
+        label: Volanta / Sección
+        type: select
+        options:
+          values:
+            - Arquitectura
+            - Literatura
+            - Pintura
+            - Arte
+            - Turismo
+            - Música
+            - Filosofía
+            - Patrimonio
+            - Crónica
+        default: Arquitectura
+      - name: jerarquia
+        label: Jerarquía en Portada
+        type: select
+        options:
+          values:
+            - value: apertura
+              label: Apertura Mayor (Principal con foto grande)
+            - value: lateral
+              label: Secundaria Lateral (Columna derecha)
+            - value: medio
+              label: Crónica Media (Bloque medio a la izquierda)
+            - value: visual
+              label: Cuaderno Visual (Tira inferior de 5 fotos)
+            - value: archivo
+              label: Solo Archivo / Sección (Sin destacar en Home)
+        default: medio
+      - name: bajada
+        label: Bajada / Copete
+        type: text
+      - name: autor
+        label: Autor / Firma
+        type: string
+        default: José Carmuega
+      - name: fecha
+        label: Fecha de Publicación
+        type: date
+      - name: imagen
+        label: Foto Destacada
+        type: image
+      - name: epigrafe
+        label: Epígrafe de la Foto
+        type: string
+      - name: body
+        label: Cuerpo del Artículo
+        type: rich-text
+
+  - name: anuncios
+    label: Anuncios y Patrocinios
+    type: collection
+    path: contenido/anuncios
+    filename: "{primary}.md"
+    view:
+      fields: [ title, ubicacion, activo, vencimiento ]
+      primary: title
+    fields:
+      - name: title
+        label: Anunciante / Campaña
+        type: string
+        required: true
+      - name: activo
+        label: Estado (Publicado)
+        type: boolean
+        default: true
+      - name: ubicacion
+        label: Ubicación en la Revista
+        type: select
+        options:
+          values:
+            - value: cabecera
+              label: Banner Superior (Debajo del menú principal)
+            - value: medio
+              label: Banner Intermedio (Entre bloques de portada)
+            - value: lateral
+              label: Módulo Lateral / Pie de Artículo
+        default: cabecera
+      - name: etiqueta
+        label: Etiqueta Legal (Ej. Patrocinio Cultural / Auspicio)
+        type: string
+        default: Patrocinio Cultural
+      - name: bajada
+        label: Texto del Anuncio
+        type: text
+      - name: imagen
+        label: Pieza Gráfica (Opcional - Si se deja vacío usa texto editorial)
+        type: image
+      - name: texto_boton
+        label: Texto del Botón (Ej. Conocer Programa)
+        type: string
+        default: Conocer más
+      - name: enlace
+        label: URL de Destino (https://...)
+        type: string
+        required: true
+      - name: vencimiento
+        label: Fecha de Finalización (Opcional)
+        type: date
+
+  - name: paginas
+    label: Páginas Institucionales y Especiales
+    type: collection
+    path: contenido/paginas
+    filename: "{primary}.md"
+    view:
+      fields: [ title, subtitulo ]
+      primary: title
+    fields:
+      - name: title
+        label: Título de la Página
+        type: string
+        required: true
+      - name: subtitulo
+        label: Volanta / Subtítulo
+        type: string
+      - name: imagen
+        label: Imagen de Cabecera (Opcional)
+        type: image
+      - name: body
+        label: Contenido de la Página
+        type: rich-text
+
+  - name: parroquiales
+    label: Las 10 Parroquiales
+    type: file
+    path: contenido/parroquiales.json
+    fields:
+      - name: items
+        label: Gacetilla Semanal (10 Notas Breves)
+        type: object
+        list: true
+        fields:
+          - name: numero
+            label: Número (Ej. 01)
+            type: string
+          - name: entidad
+            label: Entidad / Hito (Ej. Bellas Artes)
+            type: string
+          - name: texto
+            label: Texto breve
+            type: string
+
+  - name: portada
+    label: Edición Vigente
+    type: file
+    path: contenido/portada.json
+    fields:
+      - name: numero_edicion
+        label: Número de Edición (Ej. Edición N° 1)
+        type: string
+        default: Edición N° 1
+      - name: fecha_tapa
+        label: Fecha de Tapa (Ej. Sábado 7 de Noviembre de 2026)
+        type: string
+        default: Sábado 7 de Noviembre de 2026
+      - name: lema
+        label: Lema Institucional
+        type: string
+        default: Revista Mensual de cultura. Recoleta, Buenos Aires.
