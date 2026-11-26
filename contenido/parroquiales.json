@@ -1,14 +1,54 @@
 {
   "items": [
-    { "numero": "01", "entidad": "Bellas Artes", "texto": "Coloquio de restauración de yeserías del siglo XIX." },
-    { "numero": "02", "entidad": "Hemeroteca", "texto": "Digitalizan revistas literarias de 1920 a 1940." },
-    { "numero": "03", "entidad": "Concurso de Ensayo", "texto": "Abre la recepción de originales inéditos." },
-    { "numero": "04", "entidad": "Ciclo de Cine", "texto": "Retrospectiva en 35mm en el Palais de Glace." },
-    { "numero": "05", "entidad": "Galería Juncal", "texto": "Inaugura muestra de aguafuertes porteños." },
-    { "numero": "06", "entidad": "Tertulia", "texto": "Encuentro sobre crónica urbana en el Café de los Incas." },
-    { "numero": "07", "entidad": "Tipografía", "texto": "Taller de encuadernación artesanal y tipos móviles." },
-    { "numero": "08", "entidad": "Patrimonio", "texto": "Visita guiada por palacetes protegidos de Alvear." },
-    { "numero": "09", "entidad": "Salón de Grabado", "texto": "Distinguen a jóvenes ilustradores del interior." },
-    { "numero": "10", "entidad": "Archivo Histórico", "texto": "Donan correspondencia inédita de 1910." }
+    {
+      "numero": "01",
+      "entidad": "Nueva obra en el Colón",
+      "texto": "Irene Martens estrena: \"Las obras de Offman\""
+    },
+    {
+      "numero": "02",
+      "entidad": "Hemeroteca",
+      "texto": "Digitalizan revistas literarias de 1920 a 1940."
+    },
+    {
+      "numero": "03",
+      "entidad": "Concurso de Ensayo",
+      "texto": "Abre la recepción de originales inéditos."
+    },
+    {
+      "numero": "04",
+      "entidad": "Ciclo de Cine",
+      "texto": "Retrospectiva en 35mm en el Palais de Glace."
+    },
+    {
+      "numero": "05",
+      "entidad": "Galería Juncal",
+      "texto": "Inaugura muestra de aguafuertes porteños."
+    },
+    {
+      "numero": "06",
+      "entidad": "Tertulia",
+      "texto": "Encuentro sobre crónica urbana en el Café de los Incas."
+    },
+    {
+      "numero": "07",
+      "entidad": "Tipografía",
+      "texto": "Taller de encuadernación artesanal y tipos móviles."
+    },
+    {
+      "numero": "08",
+      "entidad": "Patrimonio",
+      "texto": "Visita guiada por palacetes protegidos de Alvear."
+    },
+    {
+      "numero": "09",
+      "entidad": "Salón de Grabado",
+      "texto": "Distinguen a jóvenes ilustradores del interior."
+    },
+    {
+      "numero": "10",
+      "entidad": "Archivo Histórico",
+      "texto": "Donan correspondencia inédita de 1910."
+    }
   ]
 }
