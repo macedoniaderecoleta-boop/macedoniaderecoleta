@@ -42,6 +42,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -66,7 +70,7 @@ a:hover {
   top: 0;
   z-index: 1000;
   background-color: var(--bg-color);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Sombra suave para despegar del contenido en scroll */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* Barra superior de servicios culturales */
@@ -122,7 +126,7 @@ a:hover {
 
 .brand-logo {
   font-family: var(--font-logo-serif);
-  font-size: 46px; /* Ajustado para no sobrecargar la vista fija */
+  font-size: 46px;
   font-weight: 700;
   letter-spacing: 0.18em;
   line-height: 1;
@@ -290,7 +294,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   1. BLOQUE SUPERIOR
+1. BLOQUE SUPERIOR
    ========================================================================== */
 
 .grid-top {
@@ -298,6 +302,13 @@ a:hover {
   grid-template-columns: 2.1fr 1fr;
   gap: 44px;
   align-items: start;
+}
+
+.story-lead,
+.sidebar-top,
+.col-stories,
+.story-five {
+  min-width: 0;
 }
 
 .story-lead .story-title {
@@ -310,12 +321,16 @@ a:hover {
 
 .story-media {
   margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .story-img {
   width: 100%;
+  aspect-ratio: 16 / 10;
   height: 380px;
   object-fit: cover;
+  object-position: center;
   display: block;
   border: 1px solid var(--rule-subtle);
 }
@@ -346,12 +361,16 @@ a:hover {
 
 .story-media-side {
   margin-bottom: 14px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .story-img-side {
   width: 100%;
+  aspect-ratio: 3 / 2;
   height: 200px;
   object-fit: cover;
+  object-position: center;
   display: block;
   border: 1px solid var(--rule-light);
 }
@@ -377,7 +396,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   2. BLOQUE MEDIO COMPENSADO
+2. BLOQUE MEDIO COMPENSADO
    ========================================================================== */
 
 .grid-middle-balanced {
@@ -467,7 +486,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   3. TIRA DE 5 NOTICIAS CON FOTO
+3. TIRA DE 5 NOTICIAS CON FOTO
    ========================================================================== */
 
 .strip-section {
@@ -498,12 +517,16 @@ a:hover {
 
 .story-media-five {
   margin-bottom: 10px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .img-five {
   width: 100%;
+  aspect-ratio: 4 / 3;
   height: 140px;
   object-fit: cover;
+  object-position: center;
   display: block;
   border: 1px solid var(--rule-subtle);
 }
@@ -744,7 +767,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .header-sticky-wrapper {
-    position: static; /* En celulares se desactiva para no comerse la pantalla */
+    position: static;
   }
   .brand-logo {
     font-size: 38px;
@@ -773,12 +796,13 @@ a:hover {
     font-size: 10px;
   }
 }
+
 /* ==========================================================================
    ESTILOS EXCLUSIVOS PARA LA NOTA INTERNA (articulo.html)
    ========================================================================== */
 
 .article-container {
-  max-width: 820px; /* Columna de lectura reposada para evitar fatiga visual */
+  max-width: 820px;
   margin: 44px auto 80px auto;
   padding: 0 24px;
 }
@@ -837,12 +861,16 @@ a:hover {
 
 .article-lead-figure {
   margin-bottom: 40px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .article-lead-image {
   width: 100%;
+  aspect-ratio: 16 / 10;
   height: 480px;
   object-fit: cover;
+  object-position: center;
   display: block;
   border: 1px solid var(--rule-subtle);
 }
@@ -908,7 +936,7 @@ a:hover {
 
 .embed-responsive-box {
   position: relative;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border: 1px solid var(--rule-subtle);
@@ -989,6 +1017,7 @@ a:hover {
   background-color: var(--text-primary);
   color: #ffffff;
 }
+
 /* ==========================================================================
    ESTILOS PARA PÁGINAS INSTITUCIONALES (pagina.html)
    ========================================================================== */
@@ -1115,13 +1144,14 @@ a:hover {
   border-top: 1px solid var(--rule-light);
   text-align: center;
 }
+
 /* ==========================================================================
    ESTILOS PARA CRÉDITOS Y STAFF (creditos.html)
    Fondo papel hueso frío y tipografía solemne
    ========================================================================== */
 
 .page-credits-body {
-  background-color: #f7f6f2; /* Tono papel de grabado / pergamino frío */
+  background-color: #f7f6f2;
 }
 
 .credits-wrapper {
@@ -1287,7 +1317,6 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Línea de puntos de imprenta clásica que conecta nombre y cargo */
 .dir-dots {
   flex-grow: 1;
   border-bottom: 1px dotted #bbbbbb;
@@ -1342,6 +1371,7 @@ a:hover {
     padding: 24px;
   }
 }
+
 /* ==========================================================================
    ESTILOS PARA LA HEMEROTECA (archivo.html)
    ========================================================================== */
