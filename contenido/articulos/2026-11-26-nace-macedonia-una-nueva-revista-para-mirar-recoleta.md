@@ -1,13 +1,14 @@
 ---
-title: Nace Macedonia, una nueva revista para mirar Recoleta
+title: ¡Este es un título simulado!
 seccion: Literatura
 jerarquia: apertura
 bajada: Con una propuesta editorial dedicada a la identidad, la historia y la
   vida cotidiana del barrio, llega Macedonia, una publicación que busca
   recuperar historias, descubrir personajes y poner en valor aquello que hace de
   Recoleta un lugar singular.
-autor: José Carmuega
+autor: Juan Ramón Aurelio Blanco
 fecha: 2026-11-26
+imagen: /assets/uploads/ceci consul-1.jpg
 epigrafe: Camioncito epígrafe | 2026
 ---
 Recoleta suma una nueva publicación a su vida cultural. Se trata de *Macedonia*, una revista que nace con la intención de contar el barrio desde distintas perspectivas: sus calles, sus edificios, sus comercios, sus instituciones y, fundamentalmente, las personas que le dan vida todos los días.
