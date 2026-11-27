@@ -8,7 +8,6 @@ bajada: Con una propuesta editorial dedicada a la identidad, la historia y la
   Recoleta un lugar singular.
 autor: José Carmuega
 fecha: 2026-11-26
-imagen: /assets/uploads/ceci consul-1.jpg
 epigrafe: Camioncito epígrafe | 2026
 ---
 Recoleta suma una nueva publicación a su vida cultural. Se trata de *Macedonia*, una revista que nace con la intención de contar el barrio desde distintas perspectivas: sus calles, sus edificios, sus comercios, sus instituciones y, fundamentalmente, las personas que le dan vida todos los días.
